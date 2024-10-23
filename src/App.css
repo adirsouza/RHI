@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+  box-sizing: border-box;
+  box-shadow: #000 0px 0px;
+  font-family: Helvetica;
+
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("assets/Logo-01.png");
+  background-size: cover;
+  background-position: center;
+}

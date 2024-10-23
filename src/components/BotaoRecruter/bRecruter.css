@@ -1,0 +1,14 @@
+.input-button{
+    width: 1000%;
+    height: 50px;
+    margin-left: 20px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb (o, o, o, o.1);
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: none;
+
+}

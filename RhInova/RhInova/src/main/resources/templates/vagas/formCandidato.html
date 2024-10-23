@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=”pt-br” xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>| Inova RH - Brasil |</title>
+
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+	<header>
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Inova RH</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="/">| Home |</a></li>
+
+						<a class="nav-link" href="/listaVagas"> | Buscar Vagas | </a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+
+
+	<div class="container">
+
+		<h1>Curriculum</h1>
+
+		<br>
+
+
+
+		<form method="post">
+
+
+			<div class="form-group">
+				<label for=""><b>Nome Candidato:</b> </label> <input type="text"
+					class="form-control" value=""placeholder="Insira nome Completo ou Como Deseja ser chamado"
+					name="nome" required> <small class="form-text text-muted"><i>*
+						Utilize Nome completo ou Como Deseja ser Chamado.</i></small>
+			</div>
+
+
+			<div class="row">
+				<div class="col">
+
+
+					<div class="form-group">
+						<label for=""><b>Numero De CPF:</b></label> <input
+							class="form-control" type="text" id="cpf"
+							onkeyup="formataValorCpf(this)"
+							onpaste="TrataPaste(this, event, 'cpf')" maxlength=11 /> <small
+							class="form-text text-muted"><i>* Digite CPF Valido..</i></small>
+
+					</div>
+
+				</div>
+
+				<div class="col">
+
+					<div class="form-group">
+						<label for=""><b>Data de Nascimento:</b></label> <input
+							type="date" value="" name="data" class="form-control" required />
+						<small class="form-text text-muted"><i>* Data de
+								Nascimento Valida..</i></small>
+					</div>
+
+				</div>
+
+
+				<div class="col">
+					<div class="form-group">
+						<label for=""><b>Salário:</b></label> R$ <input type="number"
+							pattern="^\d+(\.|\,)\d{2}$" value="" name="salario"
+							class="form-control" required /> <small
+							class="form-text text-muted"><i>* Utilize valores
+								considerando vírgula e ponto.</i></small>
+					</div>
+
+				</div>
+
+				<div class="col">
+
+
+					<div class="form-group">
+						<form>
+							<label for=""><b>Cnh</b></label>
+							<div></div>
+							<select name="habilitacao">
+								<option value="">Selecione a sua categoria</option>
+								<option value="ApenasA">Apenas A</option>
+								<option value="A+B">A+B</option>
+								<option value="ApenasB">Apenas B</option>
+								<option value="A+C">A+C</option>
+								<option value="Apenas C">Apenas C</option>
+								<option value="A+D">A+D</option>
+								<option value="Apenas D">Apenas D</option>
+								<option value="A+E">A+E</option>
+								<option value="Apenas E">Apenas E</option>
+								<option value="Nenhuma">Nenhuma</option>
+							</select> <small class="form-text text-muted">
+								<div></div> <i>* Selecione sua Categoria de CNH..</i>
+							</small>
+						</form>
+
+					</div>
+
+				</div>
+
+
+			</div>
+
+
+			<div class="row">
+
+				<div class="col">
+
+
+					<div class="form-group">
+						<label for=""><b>E-mail:</b></label> <input class="form-control"
+							type="text" id="" onpaste="TrataPaste(this, event, 'email')"
+							maxlength=30 /> <small class="form-text text-muted"><i>*
+								Digite E-mail Valido..</i></small>
+
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<form>
+						<label for=""><b>Estado Cicil</b></label>
+						<div></div>
+						<select name="estadoCivil">
+							<option value="">Selecione Estado Civil</option>
+							<option value="casado">Casado</option>
+							<option value="solteiro">Solteiro</option>
+							<option value="divoreciado">Divorciado</option>
+							<option value="separada">Separado</option>
+							<option value="viuco">Viuvo</option>
+						</select> <small class="form-text text-muted">
+							<div></div> <i>* Selecione Qual Seu estado Civil...</i>
+						</small>
+					</form>
+
+				</div>
+
+				<div class="form-group">
+					<form>
+						<label for=""><b>Sexo</b></label>
+						<div></div>
+						<select name="sexo">
+							<option value="">Selecione seu Sexo</option>
+							<option value="masculino">Masculino</option>
+							<option value="feminino">Faminino</option>
+							<option value="semResposta">Prefiro Não Responder</option>
+							<select>
+								<small class="form-text text-muted">
+									<div></div> <i>* Selecione Seu Sexo...</i>
+							</small>
+					</form>
+
+				</div>
+
+
+			</div>
+
+			<div class="row">
+			
+
+				<div class="form-group">
+				
+				<div class="col">
+					<label for=""><b>Cidade:</b></label> <input class="form-control"
+						type="text" id="cidade:"
+						onpaste="TrataPaste(this, event, 'cidade:')" maxlength=11 /> <small
+						class="form-text text-muted"><i>* Digite Cidade...</i></small>
+
+				</div>
+				</div>
+				<div class="col">
+
+				<div class="form-group">
+					
+						<label for=""><b>Endereço:</b></label> <input class="form-control"
+							type="text" id="endereco"
+							onpaste="TrataPaste(this, event, 'endereco')" maxlength=11 /> <small
+							class="form-text text-muted"><i>* Digite seu
+								Endereço Completo com Numero...</i></small>
+
+					</div>
+					</div>
+					<div class="col">
+
+				<div class="form-group">
+					
+						<label for=""><b>CEP:</b></label> <input class="form-control"
+							type="text" id="cep"
+							onpaste="TrataPaste(this, event, 'cep')" maxlength=11 /> <small
+							class="form-text text-muted"><i>* Digite seu
+								CEP...</i></small>
+
+					</div>
+					</div>
+					<div class="col">
+
+				<div class="form-group">
+					
+						<label for=""><b>UF:</b></label> <input class="form-control"
+							type="text" id="uf"
+							onpaste="TrataPaste(this, event, 'uf')" maxlength=11 /> <small
+							class="form-text text-muted"><i>* Digite seu
+								Estado...</i></small>
+
+					</div>
+					</div>
+					
+					
+					
+				</div>
+				
+				<div class="row">
+					
+					<div class="form-group">
+				
+				<div class="col">
+					<label for=""><b>Celular:</b></label> <input class="form-control"
+						type="text" id="celular"
+						onpaste="TrataPaste(this, event, 'celular')" maxlength=11 /> <small
+						class="form-text text-muted"><i>* Digite Celular...</i></small>
+
+				</div>
+				</div>
+				<div class="form-group">
+				
+				<div class="col">
+					<label for=""><b>Teletone Recado:</b></label> <input class="form-control"
+						type="text" id="telefone1"
+						onpaste="TrataPaste(this, event, 'telefone')" maxlength=11 /> <small
+						class="form-text text-muted"><i>* Digite Telefone para Recado...</i></small>
+
+				</div>
+				</div>
+				
+				
+				
+				</div>
+				<div class="form-group">
+
+		<label for=""><b>Descrição da vaga:</b></label>
+		<textarea class="form-control" name="descricao" maxlength="254"
+			rows="3" required></textarea>
+		<small class="form-text text-muted"><i>* Breve resumo da
+				vaga oferecida..</i></small>
+				<button type="submit" class="btn btn-success"  href="/"><a class="nav-link active bg-dark"
+							aria-current="page" href="/">Adicionar Vaga</a> </button>
+				
+				
+				
+				
+
+	</div>
+
+			</div>
+
+	
+
+	
+	
+
+
+	<div style="height: 100px;"></div>
+
+	<div class="footer-copyright fixed-bottom bg-dark text-center py-3">
+		<span class="text-light align-middle">| Inova RH - Brasil | - ©
+			2024 Copyright: SouzaTech Consultoria </span>
+	</div>
+
+
+	<!--JavaScript bootstrap-->
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous">
+		
+	</script>
+
+
+</body>
+
+</html>
